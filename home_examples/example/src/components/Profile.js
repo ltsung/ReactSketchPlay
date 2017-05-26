@@ -28,8 +28,19 @@ const styles = StyleSheet.create({
     padding: 20
   },
   link: {
-	color: colors['Peach'],
-	padding: 20  
+	  color: colors['Peach'],
+	  padding: 20  
+  },
+  cta: {
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: colors['Blue'],
+    marginLeft: 20,
+    marginRight: 20,
+    textAlign: 'center',
+    padding: 10,
+    fontSize: 16,
+    color: colors['Blue']
   }
 });
 
@@ -64,6 +75,13 @@ const Link = ({ children }: TextP): React$Element<any> => (
 );
 
 
+const CTA = ({ children }: TextP): React$Element<any> => (
+  <Text style={styles.cta}>
+    {children}
+  </Text>
+);
+
+
 
 const Body = ({ children }: TextP): React$Element<any> => (
   <Text style={styles.body}>
@@ -78,6 +96,8 @@ const Profile = (props: ProfileP): React$Element<any> => (
       <Subtitle>{`${props.user.screen_name}`}</Subtitle>
     </View>
     <Body>{props.user.description}</Body>
+    <CTA>Purchase Tickets</CTA>
+
     <Link>{props.user.url}</Link>
   </View>
 );

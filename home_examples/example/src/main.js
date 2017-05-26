@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import { render, Text, View } from 'react-sketchapp';
 import type { User } from './types';
 import { fonts, spacing } from './designSystem';
@@ -39,8 +39,6 @@ const Page = ({ users }: { users: Array<User> }) => (
         </Space>
       ))}
     </View>    
-
-
 
   </View>
   

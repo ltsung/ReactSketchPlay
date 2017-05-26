@@ -7,6 +7,7 @@ export const colors = {
   'Peach a11y': '#E37059',
   Pear: '#93DAAB',
   'Pear a11y': '#2E854B',
+  Blue: '#3399FF'
 };
 
 const typeSizes = [80, 48, 36, 24, 20, 16];

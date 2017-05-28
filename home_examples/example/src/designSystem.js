@@ -15,7 +15,7 @@ export const colors = {
 const typeSizes = [80, 48, 36, 24, 20, 16];
 
 export const spacing = 20;
-export const mini_spacing = 20;
+export const mini_spacing = 12;
 
 
 const fontFamilies = {

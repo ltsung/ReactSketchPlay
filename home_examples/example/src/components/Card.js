@@ -6,38 +6,54 @@ import type { User } from '../types';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF',
-    width: 200,
+    backgroundColor: colors['White'],
+    width: 400,
     borderRadius: 4,
-    shadowColor: '#EAEAEA',
+    shadowColor: colors['Shadow'],
     shadowOffset: { width: 2, height: 2}
   },
-  avatar: {
-    height: 100,
-    marginBottom: 20,
+  cardImage: {
+    height: 200,
+    marginBottom: spacing,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4
   },
   subtitle: { 
     fontSize: fonts['Title 3'].fontSize,
-    paddingLeft: 20
+    paddingLeft: spacing
   },
   body: {
     fontSize: fonts.Body.fontSize,
     color: colors['Night'],
-    padding: 20
+    padding: spacing,
+    lineHeight: fonts.Body.lineHeight
+  },
+  link: {
+	  color: colors['Peach'],
+	  padding: spacing  
+  },
+  cta: {
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: colors['Blue'],
+    marginLeft: spacing,
+    marginRight: spacing,
+    textAlign: 'center',
+    padding: 10,
+    fontSize: 16,
+    color: colors['Blue']
   }
 });
 
-type ProfileP = {
+type CardP = {
   user: User,
 };
 
-type AvatarP = {
+type CardImageP = {
   url: string,
 };
-const Avatar = ({ url }: AvatarP): React$Element<any> => (
-  <Image source={url} style={styles.avatar} />
+const CardImage = ({ url }: CardImageP): React$Element<any> => (
+  <Image source={url} style={styles.cardImage} />
 );
 
 type TextP = { children?: string };
@@ -53,20 +69,38 @@ const Subtitle = ({ children }: TextP): React$Element<any> => (
   </Text>
 );
 
+const Link = ({ children }: TextP): React$Element<any> => (
+  <Text style={styles.link}>
+    {children}
+  </Text>
+);
+
+
+const CTA = ({ children }: TextP): React$Element<any> => (
+  <Text style={styles.cta}>
+    {children}
+  </Text>
+);
+
+
+
 const Body = ({ children }: TextP): React$Element<any> => (
   <Text style={styles.body}>
     {children}
   </Text>
 );
 
-const Profile = (props: ProfileP): React$Element<any> => (
+const Card = (props: CardP): React$Element<any> => (
   <View style={styles.container}>
-    <Avatar url={props.user.profile_image_url} />
-    <View style={{ marginBottom: spacing }}>
+    <CardImage url={props.user.Card_image_url} />
+    <View>
       <Subtitle>{`${props.user.screen_name}`}</Subtitle>
     </View>
     <Body>{props.user.description}</Body>
+    <CTA>Purchase Tickets</CTA>
+
+    <Link>{props.user.url}</Link>
   </View>
 );
 
-export default Profile;
+export default Card;

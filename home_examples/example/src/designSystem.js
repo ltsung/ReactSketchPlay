@@ -1,4 +1,5 @@
 export const colors = {
+  White: '#FFF',
   Haus: '#F3F4F4',
   Night: '#676',
   Sur: '#96DBE4',
@@ -7,12 +8,15 @@ export const colors = {
   'Peach a11y': '#E37059',
   Pear: '#93DAAB',
   'Pear a11y': '#2E854B',
-  Blue: '#3399FF'
+  Blue: '#3399FF',
+  Shadow: '#EAEAEA'
 };
 
 const typeSizes = [80, 48, 36, 24, 20, 16];
 
-export const spacing = 16;
+export const spacing = 20;
+export const mini_spacing = 20;
+
 
 const fontFamilies = {
   display: 'Helvetica Neue',

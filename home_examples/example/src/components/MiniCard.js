@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     width: 200,
     borderRadius: 4,
     shadowColor: '#EAEAEA',
-    shadowOffset: { width: 2, height: 2}
+    shadowOffset: { width: 2, height: 2},
   },
   cardImage: {
     height: 100,
@@ -20,12 +20,14 @@ const styles = StyleSheet.create({
   },
   subtitle: { 
     fontSize: fonts['Title 3'].fontSize,
-    paddingLeft: mini_spacing
+    marginLeft: mini_spacing,
+    marginBottom: mini_spacing
   },
   body: {
     fontSize: fonts.Body.fontSize,
     color: colors['Night'],
-    padding: mini_spacing,
+    marginTop: -20,
+    padding: mini_spacing
   }
 });
 
@@ -59,13 +61,17 @@ const Body = ({ children }: TextP): React$Element<any> => (
   </Text>
 );
 
+/*
+  Extend with:
+      <Body>{props.user.description}</Body>
+*/
+
 const Card = (props: CardP): React$Element<any> => (
   <View style={styles.container}>
     <CardImage url={props.user.Card_image_url} />
     <View>
       <Subtitle>{`${props.user.screen_name}`}</Subtitle>
     </View>
-    <Body>{props.user.description}</Body>
   </View>
 );
 

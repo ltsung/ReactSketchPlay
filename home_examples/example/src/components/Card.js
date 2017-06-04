@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4
   },
-  subtitle: { 
+  subtitle: {
     fontSize: fonts['Title 3'].fontSize,
     paddingLeft: spacing
   },
@@ -30,18 +30,25 @@ const styles = StyleSheet.create({
   },
   link: {
 	  color: colors['Peach'],
-	  padding: spacing  
+	  padding: spacing
   },
+
+  /*
+  backgroundColor: colors['Peach'],
+  borderColor: colors['Peach'],
+  color: colors['White']
+  */
   cta: {
     borderRadius: 4,
     borderWidth: 2,
-    borderColor: colors['Blue'],
     marginLeft: spacing,
     marginRight: spacing,
     textAlign: 'center',
     padding: 10,
     fontSize: 16,
-    color: colors['Blue']
+    backgroundColor: colors['Peach'],
+    borderColor: colors['Peach'],
+    color: colors['White']
   }
 });
 

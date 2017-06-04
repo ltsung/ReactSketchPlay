@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 import { Image, View, Text, StyleSheet } from 'react-sketchapp';
-import { colors, fonts, mini_spacing } from '../designSystem';
+import { colors, fonts, spacing, mini_spacing } from '../designSystem';
 import type { User } from '../types';
 
 const styles = StyleSheet.create({
@@ -14,20 +14,21 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     height: 100,
-    marginBottom: mini_spacing,
+    marginBottom: spacing,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4
   },
-  subtitle: { 
+  subtitle: {
     fontSize: fonts['Title 3'].fontSize,
-    marginLeft: mini_spacing,
-    marginBottom: mini_spacing
+    marginLeft: spacing,
+    marginBottom: spacing
   },
   body: {
     fontSize: fonts.Body.fontSize,
     color: colors['Night'],
     marginTop: -20,
-    padding: mini_spacing
+    padding: spacing,
+    lineHeight: fonts.Body.lineHeight
   }
 });
 
@@ -71,6 +72,7 @@ const Card = (props: CardP): React$Element<any> => (
     <CardImage url={props.user.Card_image_url} />
     <View>
       <Subtitle>{`${props.user.screen_name}`}</Subtitle>
+      <Body>{props.user.description}</Body>
     </View>
   </View>
 );

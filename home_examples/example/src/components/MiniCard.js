@@ -14,20 +14,20 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     height: 100,
-    marginBottom: spacing,
+    marginBottom: mini_spacing,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4
   },
   subtitle: {
     fontSize: fonts['Title 3'].fontSize,
-    marginLeft: spacing,
-    marginBottom: spacing
+    marginLeft: mini_spacing,
+    marginBottom: mini_spacing
   },
   body: {
     fontSize: fonts.Body.fontSize,
     color: colors['Night'],
     marginTop: -20,
-    padding: spacing,
+    padding: mini_spacing,
     lineHeight: fonts.Body.lineHeight
   }
 });
